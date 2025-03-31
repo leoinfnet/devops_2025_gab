@@ -24,5 +24,6 @@ jobs:
           python-version: '3.11'
       - name: Executar testes
         run: |
+          cd app/
           python -m unittest ./app/testeapp.py
         continue-on-error: false
