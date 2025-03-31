@@ -14,7 +14,10 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
-
+      - name: Imprimir o diretório atual
+        run: |
+          echo "Diretório atual:"
+          pwd  # Imprime o diretório atual
       - name: Configurar ambiente Python
         uses: actions/setup-python@v5
         with:
