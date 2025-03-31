@@ -31,3 +31,10 @@ jobs:
           cd app/
           python -m unittest testeapp.py
         continue-on-error: false
+      - name: Notificar falha no Discord
+        if: failure()
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"username": "GitHub Actions", "content": "🚨 **Os testes falharam!** Verifique os logs no GitHub Actions."}' \
+               ${{ secrets.DISCORD_WEB_HOOK }}

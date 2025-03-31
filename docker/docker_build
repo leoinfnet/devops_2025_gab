@@ -1,3 +1,7 @@
 docker build ../ -f Dockerfile -t leogloriainfnet/app-python
 
 python -m unittest test_app.FlaskTestCase.test_home
+ curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"username": "GitHub Actions", "content": "🚨 **Os testes falharam!** Verifique os logs no GitHub Actions."}' \
+               https://discord.com/api/webhooks/1356397436494418030/nguBpG36asYdUO7eXk1ZGuMBnp_B0u-R9Y83Sh8eoGLcc1TcZC6tbONHCBLyqJAf4q8o
