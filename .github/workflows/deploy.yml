@@ -25,5 +25,5 @@ jobs:
       - name: Executar testes
         run: |
           cd app/
-          python -m unittest ./app/testeapp.py
+          python -m unittest testeapp.py
         continue-on-error: false
