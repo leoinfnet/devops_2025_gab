@@ -7,12 +7,12 @@ class FlaskTestCase(unittest.TestCase):
         self.app.testing = True
 
     def test_home(self):
-        response = self.app.get('http://localhost:9090/')
+        response = self.app.get('http://localhost:30090/')
         self.assertEqual(response.status_code, 200)
         json_data = response.get_json()
         self.assertEqual(json_data['message'], 'Hello, World2!')
     def test_status(self):
-        response = self.app.get('http://localhost:9090/status')
+        response = self.app.get('http://localhost:30090/status')
         self.assertEqual(response.status_code, 200)
         json_data = response.get_json()
         self.assertEqual(json_data['status'], 'running')
