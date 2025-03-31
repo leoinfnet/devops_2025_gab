@@ -38,3 +38,6 @@ jobs:
                -X POST \
                -d '{"username": "GitHub Actions", "content": "🚨 **Os testes falharam!** Verifique os logs no GitHub Actions."}' \
                ${{ secrets.DISCORD_WEB_HOOK }}
+                - name: Docker Login
+        run: |
+          echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ${{ secrets.DOCKERHUB_USER }} --password-stdin
