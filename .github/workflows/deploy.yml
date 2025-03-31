@@ -44,6 +44,6 @@ jobs:
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ${{ secrets.DOCKERHUB_USER }} --password-stdin
 
       - name: Build Docker image
-        run: docker build ../ -f docker/Dockerfile -t leogloriainfnet/app-python:latest
+        run: docker build . -f docker/Dockerfile -t leogloriainfnet/app-python:latest
       - name: Push Image
         run: docker push leogloriainfnet/app-python:latest
